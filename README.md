@@ -1,8 +1,14 @@
 # PolygonMagick
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/PolygonMagick`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Summary
 
-TODO: Delete this and the text above, and describe your gem
+Generate polygon(s) PNG image using ImageMagick.
+
+This is made just for me.
+
+## Requirement
+
+- ImageMagick
 
 ## Installation
 
@@ -22,14 +28,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
 
-## Development
+```
+require 'PolygonMagick'
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+img = PolygonMagick::Image.new
+img.make(:single, 8)
+img.write('polygon.png')
+```
+![single_8](https://user-images.githubusercontent.com/31783570/43050718-df31f38a-8e48-11e8-83a3-52667b6c7e64.png)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+require 'PolygonMagick'
+
+img = PolygonMagick::Image.new
+img.make(:multi, 100)
+img.write('polygon.png')
+```
+![multi_100](https://user-images.githubusercontent.com/31783570/43050719-df59838c-8e48-11e8-80d5-bed32a307785.png)
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/PolygonMagick.
+As you like
